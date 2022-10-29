@@ -967,7 +967,7 @@ public class SSOController : ControllerBase
 
         return new UriBuilder
         {
-            Scheme = Request.Scheme,
+            Scheme = "https",
             Host = Request.Host.Host,
             Port = requestPort,
             Path = Request.PathBase
