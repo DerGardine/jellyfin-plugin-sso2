@@ -87,7 +87,7 @@ public class SSOController : ControllerBase
                 ClientId = config.OidClientId,
                 ClientSecret = config.OidSecret,
                 RedirectUri = GetRequestBase() + "/sso/OID/r/" + provider,
-                Scope = string.Join(" ", config.OidScopes.Prepend("openid profile")),
+                Scope = string.Join(" ", config.OidScopes.Prepend("openid")),
             };
             options.Policy.Discovery.ValidateEndpoints = false; // For Google and other providers with different endpoints
             options.Policy.Discovery.RequireHttps = config.RequireHttps || true;
@@ -259,7 +259,7 @@ public class SSOController : ControllerBase
                 ClientId = config.OidClientId,
                 ClientSecret = config.OidSecret,
                 RedirectUri = GetRequestBase() + "/sso/OID/r/" + provider,
-                Scope = string.Join(" ", config.OidScopes.Prepend("openid profile")),
+                Scope = string.Join(" ", config.OidScopes.Prepend("openid")),
             };
             options.Policy.Discovery.ValidateEndpoints = false; // For Google and other providers with different endpoints
             var oidcClient = new OidcClient(options);
